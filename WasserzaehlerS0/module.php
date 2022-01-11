@@ -7,7 +7,7 @@ declare(strict_types=1);
 		{
 			//Never delete this line!
 			parent::Create();
-			$this->ConnectParent('{B36E5D2F-A9BC-BFDB-34D0-0D781B0CE677}');
+			$this->ConnectParent('{D2040875-0467-89CE-8572-65F3F0D29F18}');
 			$this->RegisterPropertyInteger('pulseVariableID', 0);
 
 			$this->RegisterPropertyBoolean('Active', false);
