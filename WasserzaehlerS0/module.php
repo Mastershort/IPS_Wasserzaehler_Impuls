@@ -7,7 +7,7 @@ declare(strict_types=1);
 		{
 			//Never delete this line!
 			parent::Create();
-			$this->RequireParent('{6179ED6A-FC31-413C-BB8E-1204150CF376}');
+			$this->ConnectParent('{6179ED6A-FC31-413C-BB8E-1204150CF376}');
 			$this->RegisterPropertyInteger('pulseVariableID', 0);
 
 			$this->RegisterPropertyBoolean('Active', false);
@@ -19,7 +19,7 @@ declare(strict_types=1);
 
 			$this->RegisterPropertyBoolean('Impulse_lBool', false);
             $this->RegisterPropertyInteger('Impulse_l', 1000);
-			this->RegisterPropertyInteger('UpdateInterval', 600);
+			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
 
             $this->SetBuffer('Periods', '{}');
@@ -54,10 +54,7 @@ declare(strict_types=1);
             $this->SetBuffer('Periods', json_encode($periodsList));
 			}
 
-		public function Send(string $Text)
-		{
-			$this->SendDataToParent(json_encode(['DataID' => '{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}', "Buffer" => $Text]));
-		}
+		
 
 		public function ReceiveData($JSONString)
 		{
