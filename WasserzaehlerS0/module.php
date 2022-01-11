@@ -7,7 +7,7 @@ declare(strict_types=1);
 		{
 			//Never delete this line!
 			parent::Create();
-			$this->ConnectParent('{D2040875-0467-89CE-8572-65F3F0D29F18}');
+			
 			$this->RegisterPropertyInteger('pulseVariableID', 0);
 
 			$this->RegisterPropertyBoolean('Active', false);
@@ -50,19 +50,90 @@ declare(strict_types=1);
 			$variableIdents = [];
 
             $variablePosition = 50;
-			$periodsList = $this->getPeriods();
-            $this->SetBuffer('Periods', json_encode($periodsList));
+
+            if ($this->ReadPropertyBoolean('Active')) {
+                $this->SetTimerInterval('WZ_UpdateCalculation', $this->ReadPropertyInteger('UpdateInterval') * 1000);
+                $this->updateCalculation();
+                $this->SetStatus(102);
+            } else {
+                $this->SetTimerInterval('WZ_UpdateCalculation', 0);
+                $this->SetStatus(104);
+            }
+			
 			}
 
 		
+		public function updateCalculation()
+        {
+           
+            $totalConsumption = 0;
 
+            if ($this->ReadPropertyBoolean('Daily')) {
+                $result = $this->calculate(strtotime('today 00:00'), time());
+                $this->SetValue('TodayConsumption', $result['consumption']);
+               
+            }
+            if ($this->ReadPropertyBoolean('PreviousDay')) {
+                $result = $this->calculate(strtotime('yesterday 00:00'), strtotime('yesterday 23:59'));
+                $this->SetValue('PreviousDayConsumption', $result['consumption']);
+               
+            }
+
+            if ($this->ReadPropertyBoolean('PreviousWeek')) {
+                $result = $this->calculate(strtotime('last Monday'), strtotime('next Sunday 23:59:59'));
+                $this->SetValue('PreviousWeekConsumption', $result['consumption']);
+                
+            }
+
+            if ($this->ReadPropertyBoolean('CurrentMonth')) {
+                $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
+                $this->SetValue('CurrentMonthConsumption', $result['consumption']);
+                
+            }
+
+            if ($this->ReadPropertyBoolean('CurrentMonth')) {
+                $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
+                $this->SetValue('CurrentMonthConsumption', $result['consumption']);
+                
+            }
+            if ($this->ReadPropertyBoolean('LastMonth')) {
+                $result = $this->calculate(strtotime('midnight first day of this month - 1 month'), strtotime('last day of this month 23:59:59 -1 month'));
+                $this->SetValue('LastMonthConsumption', $result['consumption']);
+                
+            }
+            public function calculate($startDate, $endDate)
+        {
+            $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
+            $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
+            $consumption = 0;
+           
+            $hour = null;
+
+            $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
+
+            
+
+                foreach ($values as $key => $value) {
+                    $tmpValueAVG = $value['Avg'];
+
+                    if ($this->ReadPropertyBoolean('Impulse_lBool')) {
+                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                    }
+
+                    $hour = date('H', $value['TimeStamp']) * 1;
+                   
+                        $consumption += $tmpValueAVG;
+                        
+                    
+                }
+            }
+            return ['consumption' => round($consumption, 2)];
+        }
 		public function ReceiveData($JSONString)
 		{
 			$data = json_decode($JSONString);
 			IPS_LogMessage('Device RECV', utf8_decode($data->Buffer));
 		}
 
-		public function getPeriods(){
 		
-		}
 	}
