@@ -1,0 +1,12 @@
+{
+    "id": "{45995DB3-0510-6AAF-2CB1-5DEA4837E923}",
+    "name": "Wasserzaehler",
+    "author": "Torsten Becker",
+    "url": "",
+    "compatibility": {
+        "version": "5.5"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 11
+}
