@@ -47,8 +47,8 @@
         },
         {
             "type": "NumberSpinner",
-            "name": "Impulse_kWh",
-            "caption": "Impulse/kWh"
+            "name": "Impulse_l",
+            "caption": "Impulse/Liter"
         }
         
     ],
