@@ -1,16 +1,79 @@
 {
-    "elements": [],
-    "actions": [
+    "elements": [
         {
-            "name": "Text",
-            "type": "ValidationTextBox",
-            "caption": "Text"
+            "type": "CheckBox",
+            "name": "Active",
+            "caption": "Active"
         },
         {
-            "type": "Button",
-            "caption": "Send",
-            "onClick": "WZ_Send($id, $Text);"
+            "type": "SelectVariable",
+            "name": "pulseVariableID",
+            "caption": "Pulse variable",
+            "validVariableTypes": [
+                1,
+                2
+            ],
+            "requiredLogging": 4
+        },
+        {
+            "type": "CheckBox",
+            "name": "Daily",
+            "caption": "Daily"
+        },
+        {
+            "type": "CheckBox",
+            "name": "PreviousDay",
+            "caption": "Previous Day"
+        },
+        {
+            "type": "CheckBox",
+            "name": "PreviousWeek",
+            "caption": "Previous Week"
+        },
+        {
+            "type": "CheckBox",
+            "name": "CurrentMonth",
+            "caption": "Current Month"
+        },
+        {
+            "type": "CheckBox",
+            "name": "LastMonth",
+            "caption": "Last Month"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "UpdateInterval",
+            "caption": "Update Interval"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "Impulse_kWh",
+            "caption": "Impulse/kWh"
         }
+        
     ],
-    "status": []
+    "actions": [
+        {
+            "type": "Label",
+            "caption": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos, Schenkungen als Unterstützung für den Autor werden hier akzeptiert:    "
+        }
+        
+    ],
+    "status": [
+        {
+            "code": 102,
+            "icon": "active",
+            "caption": "Instance is active"
+        },
+        {
+            "code": 200,
+            "icon": "error",
+            "caption": "Instance Error"
+        },
+        {
+            "code": 104,
+            "icon": "inactive",
+            "caption": "Instance is inactive"
+        }
+    ]
 }
