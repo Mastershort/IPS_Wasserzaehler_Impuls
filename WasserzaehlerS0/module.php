@@ -101,34 +101,33 @@ declare(strict_types=1);
                 $this->SetValue('LastMonthConsumption', $result['consumption']);
                 
             }
+        }
             public function calculate($startDate, $endDate)
-        {
-            $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
-            $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
-            $consumption = 0;
+            {
+                $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
+                $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
+                $consumption = 0;
            
-            $hour = null;
+                $hour = null;
 
-            $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
+                $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
 
             
 
-                foreach ($values as $key => $value) {
-                    $tmpValueAVG = $value['Avg'];
+                    foreach ($values as $key => $value) {
+                        $tmpValueAVG = $value['Avg'];
 
-                    if ($this->ReadPropertyBoolean('Impulse_lBool')) {
-                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
-                    }
+                        if ($this->ReadPropertyBoolean('Impulse_lBool')) {
+                            $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                        }
 
-                    $hour = date('H', $value['TimeStamp']) * 1;
+                        $hour = date('H', $value['TimeStamp']) * 1;
                    
-                        $consumption += $tmpValueAVG;
-                        
-                    
-                }
-            }
+                            $consumption += $tmpValueAVG;
+                    }
+          
             return ['consumption' => round($consumption, 2)];
-        }
+          }
 		public function ReceiveData($JSONString)
 		{
 			$data = json_decode($JSONString);
