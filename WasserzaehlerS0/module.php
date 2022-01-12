@@ -17,7 +17,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
 
-			$this->RegisterPropertyBoolean('Impulse_lBool', false);
+			
             $this->RegisterPropertyInteger('Impulse_l', 1000);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
