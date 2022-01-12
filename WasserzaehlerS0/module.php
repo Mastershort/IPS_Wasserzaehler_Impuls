@@ -108,13 +108,17 @@ declare(strict_types=1);
                 $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
                 $consumption = 0;
            
+                $hour = null;
+
                 $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
 
-                $tmpValueAVG = $values['Avg'];
-                $tmpValueAVG = $values['Avg'] / $this->ReadPropertyInteger('Impulse_l');
-                 
-                $consumption += $tmpValueAVG;
-                    
+            
+
+                    foreach ($values as $key => $value) {
+                        $tmpValueAVG = $value['Avg'];
+                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                        $consumption += $tmpValueAVG;
+                    }
           
             return ['consumption' => round($consumption, 2)];
           }
