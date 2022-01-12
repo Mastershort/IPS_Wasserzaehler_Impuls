@@ -18,7 +18,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('LastMonth', false);
 
 			
-            $this->RegisterPropertyInteger('Impulse_l', 1000);
+            $this->RegisterPropertyInteger('Impulse_l',4);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
 
@@ -116,10 +116,8 @@ declare(strict_types=1);
 
                     foreach ($values as $key => $value) {
                         $tmpValueAVG = $value['Avg'];
-
-                        if ($this->ReadPropertyBoolean('Impulse_lBool')) {
-                            $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
-                        }
+                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                       
 
                         $hour = date('H', $value['TimeStamp']) * 1;
                    
