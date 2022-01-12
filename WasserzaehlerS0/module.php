@@ -22,7 +22,7 @@ declare(strict_types=1);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
 
-            $this->SetBuffer('Periods', '{}');
+            
 		
 		}
 
