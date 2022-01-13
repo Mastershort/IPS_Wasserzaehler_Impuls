@@ -114,7 +114,7 @@ declare(strict_types=1);
                 $consumption = 0;
            
                 $hour = null;
-                $price =
+                
                 $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
 
             
