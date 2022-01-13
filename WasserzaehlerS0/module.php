@@ -76,6 +76,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('Daily')) {
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
+                $this->SetValue('DailyPrice', $result['Price']);
                
                
             }
@@ -113,6 +114,7 @@ declare(strict_types=1);
                 $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
                 $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
                 $consumption = 0;
+                $price = 0;
            
                 $hour = null;
                 
@@ -124,9 +126,11 @@ declare(strict_types=1);
                         $tmpValueAVG = $value['Avg'];
                         $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
                         $consumption += $tmpValueAVG;
+                        $calculatedPrice = 10;
+                        $price += $calculatedPrice;
                     }
           
-            return ['consumption' => round($consumption, 2)];
+            return ['consumption' => round($consumption, 2)'price' => ,$price];
           }
 		public function ReceiveData($JSONString)
 		{
