@@ -57,11 +57,13 @@
         },
         {
             "type": "NumberSpinner",
+            "digits": 2,
             "name": "DrinkingWaterCost",
             "caption": "Drinking Water Cost"
         },
         {
             "type": "NumberSpinner",
+            "digits": 2,
             "name": "SewageCost",
             "caption": "Sewage Cost"
         }

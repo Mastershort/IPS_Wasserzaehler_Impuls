@@ -16,7 +16,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
             $this->RegisterPropertyBoolean('Price', false);
-            $this->RegisterPropertyFloat('DailyCost',0.00);
+            $this->RegisterPropertyFloat('DailyCost',.00);
             $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
             $this->RegisterPropertyFloat('SewageCost',0.00);
             $this->RegisterPropertyInteger('Impulse_l',4);
@@ -48,7 +48,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 
-            $this->MaintainVariable('DailyPrice', $this->Translate('Daily Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('Price') == true);
+            $this->MaintainVariable('DailyPrice', $this->Translate('Daily Price'), 3, '~Euro', 14, $this->ReadPropertyBoolean('Price') == true);
 
             //$this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 			
@@ -129,7 +129,7 @@ declare(strict_types=1);
                         
                     }
                     $calculatedPrice = $this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost');
-                       $price += $calculatedPrice;
+                    $price =$consumption * $calculatedPrice;
           
             return ['consumption' => round($consumption, 2),'price' => $price];
           }
