@@ -43,7 +43,7 @@
         {
             "type": "CheckBox",
             "name": "Price",
-            "caption": "Price",
+            "caption": "Price"
         },
         {
             "type": "NumberSpinner",
