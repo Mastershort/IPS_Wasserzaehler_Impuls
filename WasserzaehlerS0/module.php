@@ -15,6 +15,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
+            $this->RegisterPropertyBoolean('Price', false);
             $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
             $this->RegisterPropertyFloat('SewageCost',0.00);
             $this->RegisterPropertyInteger('Impulse_l',4);
@@ -45,6 +46,10 @@ declare(strict_types=1);
             $this->MaintainVariable('CurrentMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 10, $this->ReadPropertyBoolean('CurrentMonth') == true);
 
             $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
+
+            $this->MaintainVariable('DailyCost', $this->Translate('Daily Cost'), 3, '~Euro', 12, $this->ReadPropertyFloat('Price') == true);
+
+            //$this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 			
 			$variableIdents = [];
 
@@ -70,6 +75,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('Daily')) {
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
+                $this->SetValue('')
                
             }
             if ($this->ReadPropertyBoolean('PreviousDay')) {
@@ -108,7 +114,7 @@ declare(strict_types=1);
                 $consumption = 0;
            
                 $hour = null;
-
+                $price =
                 $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
 
             
