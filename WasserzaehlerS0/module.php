@@ -126,9 +126,10 @@ declare(strict_types=1);
                         $tmpValueAVG = $value['Avg'];
                         $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
                         $consumption += $tmpValueAVG;
-                        $calculatedPrice = 10;
-                        $price += $calculatedPrice;
+                        
                     }
+                    $calculatedPrice = ReadPropertyFloat('DrinkingWaterCost') + ReadPropertyFloat('SewageCost');
+                       $price += $calculatedPrice;
           
             return ['consumption' => round($consumption, 2),'price' => $price];
           }
