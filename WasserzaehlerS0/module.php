@@ -130,7 +130,7 @@ declare(strict_types=1);
                         $price += $calculatedPrice;
                     }
           
-            return ['consumption' => round($consumption, 2)'price' => ,$price];
+            return ['consumption' => round($consumption, 2)'price' => $price];
           }
 		public function ReceiveData($JSONString)
 		{
