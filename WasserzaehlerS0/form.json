@@ -41,6 +41,11 @@
             "caption": "Last Month"
         },
         {
+            "type": "CheckBox",
+            "name": "Price",
+            "caption": "Price",
+        },
+        {
             "type": "NumberSpinner",
             "name": "UpdateInterval",
             "caption": "Update Interval"
