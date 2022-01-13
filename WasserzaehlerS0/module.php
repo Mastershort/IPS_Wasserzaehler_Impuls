@@ -16,6 +16,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
             $this->RegisterPropertyBoolean('Price', false);
+            $this->RegisterPropertyFloat('DailyCost',0.00);
             $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
             $this->RegisterPropertyFloat('SewageCost',0.00);
             $this->RegisterPropertyInteger('Impulse_l',4);
@@ -47,7 +48,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 
-            $this->MaintainVariable('DailyCost', $this->Translate('Daily Cost'), 3, '~Euro', 12, $this->ReadPropertyFloat('Price') == true);
+            $this->MaintainVariable('DailyCost', $this->Translate('Daily Cost'), 3, '~Euro', 14, $this->ReadPropertyBoolean('Price') == true);
 
             //$this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 			
