@@ -76,7 +76,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('Daily')) {
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
-                $this->SetValue('DailyPrice', $result['price']);
+                $this->SetValueFloat('DailyPrice', $result['price']);
                
                
             }
@@ -131,7 +131,7 @@ declare(strict_types=1);
                     $calculatedPrice = $this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost');
                     $price =$consumption * $calculatedPrice;
           
-            return ['consumption' => round($consumption, 2),'price' => $price];
+            return ['consumption' => round($consumption, 2),'price' => round($price, 2)];
           }
 		public function ReceiveData($JSONString)
 		{
