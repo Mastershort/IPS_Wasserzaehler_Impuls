@@ -128,7 +128,7 @@ declare(strict_types=1);
                         $consumption += $tmpValueAVG;
                         
                     }
-                    $calculatedPrice = $this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost');
+                    $calculatedPrice = ($this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost') )/ 1000;
                     $price =$consumption * $calculatedPrice;
           
             return ['consumption' => round($consumption, 2),'price' => round($price, 2)];
