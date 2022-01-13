@@ -16,7 +16,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
             $this->RegisterPropertyBoolean('Price', false);
-            $this->RegisterPropertyFloat('DailyCost',.00);
+            $this->RegisterPropertyFloat('DailyCost',0.00);
             $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
             $this->RegisterPropertyFloat('SewageCost',0.00);
             $this->RegisterPropertyInteger('Impulse_l',4);
