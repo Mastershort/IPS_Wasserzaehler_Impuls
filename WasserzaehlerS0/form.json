@@ -49,6 +49,16 @@
             "type": "NumberSpinner",
             "name": "Impulse_l",
             "caption": "Impulse/Liter"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "DrinkingWaterCost",
+            "caption": "Drinking Water Cost"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "SewageCost",
+            "caption": "Sewage Cost"
         }
         
     ],

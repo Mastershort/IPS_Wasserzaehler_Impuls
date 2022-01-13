@@ -9,15 +9,14 @@ declare(strict_types=1);
 			parent::Create();
 			
 			$this->RegisterPropertyInteger('pulseVariableID', 0);
-
-			$this->RegisterPropertyBoolean('Active', false);
+            $this->RegisterPropertyBoolean('Active', false);
             $this->RegisterPropertyBoolean('Daily', false);
             $this->RegisterPropertyBoolean('PreviousDay', false);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
-
-			
+            $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
+            $this->RegisterPropertyFloat('SewageCost',0.00);
             $this->RegisterPropertyInteger('Impulse_l',4);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
@@ -130,3 +129,6 @@ declare(strict_types=1);
 
 		
 	}
+
+    // Wasser Kosten Trinkwasser 0,92 Euro/m³
+    // Wasser Kosten Abwasser 2,20 Euro/m³
