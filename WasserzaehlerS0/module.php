@@ -16,7 +16,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('PreviousMonth', false);
-            //$this->RegisterPropertyBoolean('CurrentYear'), false);
+            $this->RegisterPropertyBoolean('CurrentYear'), false);
             $this->RegisterPropertyBoolean('TodayCosts', false);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
             $this->RegisterPropertyBoolean('CurrentWeekCosts', false);
