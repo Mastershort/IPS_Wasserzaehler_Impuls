@@ -181,7 +181,16 @@ declare(strict_types=1);
                 $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
                 $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
                 $totalCount = 0;
-                $totalCount = 10 + $this->ReadPropertyFloat('CurrentTotalCounter');
+
+                $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 4, 0, 0, 0);
+                foreach ($values as $key => $value) {
+                       
+                        $totalCountValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                        $totalCount += $totalCountValueAVG;
+                        
+                    }
+
+                $totalCount = $totalCount + $this->ReadPropertyFloat('CurrentTotalCounter');
                 return['totalCounter'=>round($totalCount,2)];
           }
 		public function ReceiveData($JSONString)

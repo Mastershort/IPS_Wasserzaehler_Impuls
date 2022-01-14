@@ -64,6 +64,7 @@
         {
             "type": "NumberSpinner",
             "name": "CurrentTotalCounter",
+            "digits": 2,
             "caption": "Current Total Counter"
         },
         {
