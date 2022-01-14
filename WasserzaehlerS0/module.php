@@ -20,8 +20,8 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
             $this->RegisterPropertyBoolean('CurrentWeekCosts', false);
             $this->RegisterPropertyBoolean('PreviousWeekCosts', false);
-            $this->RegisterPropertyBoolean('MontlyPrice', false);
-            $this->RegisterPropertyBoolean('YearPrice', false);
+            $this->RegisterPropertyBoolean('MontlyCosts', false);
+            $this->RegisterPropertyBoolean('YearCosts', false);
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedMonthlyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedYearPrice',0.00);
@@ -66,9 +66,9 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CalculatedPreviousWeekCosts', $this->Translate('Previous Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('PreviousWeekCosts') == true);
 
-            $this->MaintainVariable('CalculatedMontlyPrice', $this->Translate('Montly Price'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MontlyPrice') == true);
+            $this->MaintainVariable('CalculatedMontlyCosts', $this->Translate('Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MontlyCosts') == true);
 
-            $this->MaintainVariable('CalculatedYearPrice', $this->Translate('Year Price'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearPrice') == true);
+            $this->MaintainVariable('CalculatedYearCosts', $this->Translate('Year Costs'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearCosts') == true);
 
             
 			
@@ -110,7 +110,7 @@ declare(strict_types=1);
                
             }
             if ($this->ReadPropertyBoolean('CurrentWeek')) {
-                $result = $this->calculate(strtotime('monday this week'), strtotime(' next Sunday 23:59:59'));
+                $result = $this->calculate(strtotime('last monday'), strtotime(' next Sunday 23:59:59'));
                 $this->SetValue('CurrentWeekConsumption', $result['consumption']);
              if ($this->ReadPropertyBoolean('CurrentWeekCosts')) {
                 $this->SetValue('CalculatedWeekCosts', $result['costs']);
@@ -128,7 +128,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('CurrentMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
                 $this->SetValue('CurrentMonthConsumption', $result['consumption']);
-                $this->SetValue('CalculatedMontlyPrice', $result['price']);
+                $this->SetValue('CalculatedMontlyCosts', $result['costs']);
                 
             }
 

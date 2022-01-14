@@ -84,13 +84,18 @@
                 
                 {
                     "type": "CheckBox",
-                    "name": "MontlyPrice",
-                    "caption": "Montly Price"
+                    "name": "MontlyCosts",
+                    "caption": "Montly Costs"
                 },
                 {
                     "type": "CheckBox",
-                    "name": "YearPrice",
-                    "caption": "Year Price"
+                    "name": "PreviousMontlyCosts",
+                    "caption": "PreviousMontly Costs"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "YearCosts",
+                    "caption": "Year Costs"
                 },
                 {
                     "type": "NumberSpinner",
