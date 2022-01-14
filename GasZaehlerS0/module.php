@@ -31,7 +31,7 @@ declare(strict_types=1);
             $this->RegisterPropertyFloat('CalculatedYearPrice',0.00);
             $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
             $this->RegisterPropertyFloat('SewageCost',0.00);
-            $this->RegisterPropertyInteger('Impulse_l',4);
+            $this->RegisterPropertyInteger('Impulse_m3',4);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
 
@@ -73,11 +73,11 @@ declare(strict_types=1);
             $variablePosition = 50;
 
             if ($this->ReadPropertyBoolean('Active')) {
-                $this->SetTimerInterval('WZ_UpdateCalculation', $this->ReadPropertyInteger('UpdateInterval') * 1000);
+                $this->SetTimerInterval('GZ_UpdateCalculation', $this->ReadPropertyInteger('UpdateInterval') * 1000);
                 $this->updateCalculation();
                 $this->SetStatus(102);
             } else {
-                $this->SetTimerInterval('WZ_UpdateCalculation', 0);
+                $this->SetTimerInterval('GZ_UpdateCalculation', 0);
                 $this->SetStatus(104);
             }
 			
