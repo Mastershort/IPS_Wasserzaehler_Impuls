@@ -17,8 +17,8 @@
         },
         {
             "type": "NumberSpinner",
-            "name": "Impulse_l",
-            "caption": "Impulse/Liter"
+            "name": "Impulse_m3",
+            "caption": "Impulse/m3"
         },
         {
             "type": "CheckBox",
