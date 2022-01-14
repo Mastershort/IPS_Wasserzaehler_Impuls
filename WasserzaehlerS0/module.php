@@ -54,7 +54,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 
-            $this->MaintainVariable('CalculatedTodayPrice', $this->Translate('Calculated Today Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayPrice') == true);
+            $this->MaintainVariable('CalculatedTodayPrice', $this->Translate('Today Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayPrice') == true);
 
             $this->MaintainVariable('CalculatedWeeklyPrice', $this->Translate('Weekly Price'), 2, '~Euro', 16, $this->ReadPropertyBoolean('WeeklyPrice') == true);
 
@@ -62,7 +62,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CalculatedYearPrice', $this->Translate('Year Price'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearPrice') == true);
 
-            //$this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
+            
 			
 			$variableIdents = [];
 
@@ -96,6 +96,7 @@ declare(strict_types=1);
                 $result = $this->calculate(strtotime('yesterday 00:00'), strtotime('yesterday 23:59'));
                 $this->SetValue('PreviousDayConsumption', $result['consumption']);
                
+               
             }
 
             if ($this->ReadPropertyBoolean('PreviousWeek')) {
@@ -107,6 +108,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('CurrentMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
                 $this->SetValue('CurrentMonthConsumption', $result['consumption']);
+                $this->SetValue('CalculatedMontlyPrice', $result['price']);
                 
             }
 
