@@ -64,7 +64,7 @@ declare(strict_types=1);
             $this->MaintainVariable('CalculatedMonthlyCosts', $this->Translate('Current Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MonthlyCosts') == true);
             $this->MaintainVariable('CalculatedPreviousMonthlyCosts', $this->Translate('Previous Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('PreviousMonthlyCosts') == true);
             $this->MaintainVariable('CalculatedYearCosts', $this->Translate('Current Year Costs'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearCosts') == true);
-            $this->MaintainVariable('CalculatedTotalCounter', $this->Translate('Calculated Total Counter'), 2, '~Euro', 20, $this->ReadPropertyBoolean('ActiveTotalCounter') == true);
+            $this->MaintainVariable('CalculatedTotalCounter', $this->Translate('Calculated Total Counter'), 2, '~Water', 20, $this->ReadPropertyBoolean('ActiveTotalCounter') == true);
 
             
 			
@@ -144,7 +144,14 @@ declare(strict_types=1);
                 $this->SetValue('CalculatedYearCosts', $result['costs']);
                 }   
             }
+            if ($this->ReadPropertyBoolean('ActiveTotalCounter')) {
+                $result = $this->calculateTotal(strtotime('midnight first day of this year'), time());
+                $this->SetValue('CalculatedTotalCounter', $result['totalCounter']);
+               
+            }
         }
+            
+
             public function calculate($startDate, $endDate)
             {
                 $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
@@ -166,8 +173,15 @@ declare(strict_types=1);
                     }
                     $calculatedCosts = ($this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost') )/ 1000;
                     $costs = $consumption * $calculatedCosts;
+                    
           
             return ['consumption' => round($consumption, 2),'costs' => round($costs, 2)];
+          }
+          public function calculateTotal(){
+                $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
+                $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
+                $totalcount = 10 + $this->ReadPropertyFloat('CurrentTotalCounter');
+                return['totalCounter'=>round($totalCount,2)];
           }
 		public function ReceiveData($JSONString)
 		{
