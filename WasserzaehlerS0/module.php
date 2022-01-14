@@ -131,7 +131,7 @@ declare(strict_types=1);
                 $result = $this->calculate(strtotime('midnight first day of this month - 1 month'), strtotime('last day of this month 23:59:59 -1 month'));
                 $this->SetValue('PreviousMonthConsumption', $result['consumption']);
              if ($this->ReadPropertyBoolean('PreviousMonthlyCosts')) {
-                $this->SetValue('CalculatedMonthlyCosts', $result['costs']);
+                $this->SetValue('CalculatedPreviousMonthlyCosts', $result['costs']);
                 }   
             }
             if ($this->ReadPropertyBoolean('CurrentYear')) {
