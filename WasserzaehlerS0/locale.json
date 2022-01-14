@@ -37,7 +37,8 @@
             "Last Month": "Letzer Monat",
             "Update Interval": "Aktualisierungsintervall",
             "Impulse/kWh Calculation": "Impulse/Liter Berechnung",
-            "Impulse/kWh": "Impulse/Liter"
+            "Impulse/kWh": "Impulse/Liter",
+            "Price Calculation": "Kosten Berechnung" 
         }
     }
 }

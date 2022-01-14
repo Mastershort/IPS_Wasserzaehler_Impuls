@@ -68,6 +68,27 @@
             "suffix": "€",
             "name": "SewageCost",
             "caption": "Sewage Cost"
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "Price Calculation",
+            "items": [
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "CheckBox",
+                            "name": "Impulse_kWhBool",
+                            "caption": "Impulse/kWh Calculation"
+                        },
+                        {
+                            "type": "NumberSpinner",
+                            "name": "Impulse_kWh",
+                            "caption": "Impulse/kWh"
+                        }
+                    ]
+                }
+            ]
         }
         
     ],
