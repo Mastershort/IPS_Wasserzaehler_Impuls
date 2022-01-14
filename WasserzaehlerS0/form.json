@@ -46,7 +46,11 @@
             "name": "PreviousMonth",
             "caption": "Previous Month"
         },
-        
+        {
+            "type": "CheckBox",
+            "name": "CurrentYear",
+            "caption": "Current Year"
+        },
         {
             "type": "NumberSpinner",
             "name": "UpdateInterval",
