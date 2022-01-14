@@ -93,8 +93,9 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('Today')) {
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
+            if ($this->ReadPropertyBoolean('TodayCosts')) {
                 $this->SetValue('CalculatedTodayCosts', $result['price']);
-               
+              } 
                
             }
             if ($this->ReadPropertyBoolean('PreviousDay')) {
