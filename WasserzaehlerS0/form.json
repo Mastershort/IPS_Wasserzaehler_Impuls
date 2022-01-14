@@ -84,12 +84,12 @@
                 
                 {
                     "type": "CheckBox",
-                    "name": "MontlyCosts",
+                    "name": "MonthlyCosts",
                     "caption": "Montly Costs"
                 },
                 {
                     "type": "CheckBox",
-                    "name": "PreviousMontlyCosts",
+                    "name": "PreviousMonthlyCosts",
                     "caption": "PreviousMontly Costs"
                 },
                 {
