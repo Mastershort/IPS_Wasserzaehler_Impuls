@@ -85,7 +85,7 @@ declare(strict_types=1);
            
             $totalConsumption = 0;
 
-            if ($this->ReadPropertyBoolean('Daily')) {
+            if ($this->ReadPropertyBoolean('Today')) {
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
                 $this->SetValue('DailyPrice', $result['price']);
