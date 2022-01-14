@@ -18,7 +18,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousMonth', false);
             $this->RegisterPropertyBoolean('TodayCosts', false);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
-            $this->RegisterPropertyBoolean('WeekCosts', false);
+            $this->RegisterPropertyBoolean('CurrentWeekCosts', false);
             $this->RegisterPropertyBoolean('MontlyPrice', false);
             $this->RegisterPropertyBoolean('YearPrice', false);
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
@@ -61,7 +61,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CalculatedPreviousTodayCosts', $this->Translate('Previous Day Costs'), 2, '~Euro', 14, $this->ReadPropertyBoolean('PreviousDayCosts') == true);
 
-            $this->MaintainVariable('CalculatedWeekCosts', $this->Translate('Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('WeekCosts') == true);
+            $this->MaintainVariable('CalculatedWeekCosts', $this->Translate('Current Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('CurrentWeekCosts') == true);
 
             $this->MaintainVariable('CalculatedMontlyPrice', $this->Translate('Montly Price'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MontlyPrice') == true);
 
@@ -101,15 +101,17 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('PreviousDay')) {
                 $result = $this->calculate(strtotime('yesterday 00:00'), strtotime('yesterday 23:59'));
                 $this->SetValue('PreviousDayConsumption', $result['consumption']);
+             if ($this->ReadPropertyBoolean('PreviousDayCosts')) {
                 $this->SetValue('CalculatedPreviousTodayCosts', $result['price']);
-               
+              } 
                
             }
             if ($this->ReadPropertyBoolean('CurrentWeek')) {
                 $result = $this->calculate(strtotime('last Monday'), strtotime(' next Sunday 23:59:59'));
                 $this->SetValue('CurrentWeekConsumption', $result['consumption']);
+             if ($this->ReadPropertyBoolean('PreviousWeekCosts')) {
                 $this->SetValue('CalculatedWeekCosts', $result['price']);
-                
+              } 
             }
 
             if ($this->ReadPropertyBoolean('PreviousWeek')) {
