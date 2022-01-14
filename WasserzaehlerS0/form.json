@@ -62,22 +62,20 @@
             "items": [
                 {
                     
-                    {
                     "type": "NumberSpinner",
                     "digits": 2,
                     "suffix": "€",
                     "name": "DrinkingWaterCost",
                     "caption": "Drinking Water Cost"
-                    },
-                    {
-                        "type": "NumberSpinner",
-                        "digits": 2,
-                        "suffix": "€",
-                        "name": "SewageCost",
-                        "caption": "Sewage Cost"
-                    },
-                    
-                }
+                },
+                {
+                    "type": "NumberSpinner",
+                    "digits": 2,
+                    "suffix": "€",
+                    "name": "SewageCost",
+                    "caption": "Sewage Cost"
+                },
+                   
             ]
         }
         
