@@ -157,7 +157,7 @@ declare(strict_types=1);
             
 
                     foreach ($values as $key => $value) {
-                        $tmpValueAVG = $value['Avg'];
+                       
                         $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
                         $consumption += $tmpValueAVG;
                         
