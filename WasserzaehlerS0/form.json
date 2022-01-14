@@ -61,6 +61,11 @@
                 },
                 {
                     "type": "CheckBox",
+                    "name": "Weekly Price",
+                    "caption": "WeeklyPrice"
+                },
+                {
+                    "type": "CheckBox",
                     "name": "Montly Price",
                     "caption": "MontlyPrice"
                 },

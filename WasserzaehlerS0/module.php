@@ -48,7 +48,13 @@ declare(strict_types=1);
 
             $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 
-            $this->MaintainVariable('DailyPrice', $this->Translate('Daily Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('Price') == true);
+            $this->MaintainVariable('DailyPrice', $this->Translate('Daily Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('DailyPrice') == true);
+
+            $this->MaintainVariable('WeeklyPrice', $this->Translate('Weekly Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('WeeklyPrice') == true);
+
+            $this->MaintainVariable('MontlyPrice', $this->Translate('Montly Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('MontlyPrice') == true);
+
+            $this->MaintainVariable('YearPrice', $this->Translate('Year Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('YearPrice') == true);
 
             //$this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 			
