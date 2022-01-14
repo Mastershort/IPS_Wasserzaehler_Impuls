@@ -1,0 +1,160 @@
+{
+    "elements": [
+        {
+            "type": "CheckBox",
+            "name": "Active",
+            "caption": "Active"
+        },
+        {
+            "type": "SelectVariable",
+            "name": "pulseVariableID",
+            "caption": "Pulse variable",
+            "validVariableTypes": [
+                1,
+                2
+            ],
+            "requiredLogging": 4
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "Impulse_l",
+            "caption": "Impulse/Liter"
+        },
+        {
+            "type": "CheckBox",
+            "name": "Today",
+            "caption": "Today"
+        },
+           
+        {
+            "type": "CheckBox",
+            "name": "PreviousDay",
+            "caption": "Previous Day"
+        },
+        {
+            "type": "CheckBox",
+            "name": "CurrentWeek",
+            "caption": "Current Week"
+        },
+        {
+            "type": "CheckBox",
+            "name": "PreviousWeek",
+            "caption": "Previous Week"
+        },
+        {
+            "type": "CheckBox",
+            "name": "CurrentMonth",
+            "caption": "Current Month"
+        },
+        {
+            "type": "CheckBox",
+            "name": "PreviousMonth",
+            "caption": "Previous Month"
+        },
+        {
+            "type": "CheckBox",
+            "name": "CurrentYear",
+            "caption": "Current Year"
+        },
+        {
+            "type": "CheckBox",
+            "name": "ActiveTotalCounter",
+            "caption": "Active Total Counter"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "CurrentTotalCounter",
+            "digits": 2,
+            "caption": "Current Total Counter"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "UpdateInterval",
+            "caption": "Update Interval"
+        },
+
+        
+        {
+            "type": "ExpansionPanel",
+            "caption": "Price Calculation",
+            "items": [
+                {
+                    "type": "CheckBox",
+                    "name": "TodayCosts",
+                    "caption": "Today Costs"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "PreviousDayCosts",
+                    "caption": "Previous Day Costs"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "CurrentWeekCosts",
+                    "caption": "Current Week Costs"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "PreviousWeekCosts",
+                    "caption": "Previous Week Costs"
+                },
+
+                
+                {
+                    "type": "CheckBox",
+                    "name": "MonthlyCosts",
+                    "caption": "Montly Costs"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "PreviousMonthlyCosts",
+                    "caption": "Previous Montly Costs"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "YearCosts",
+                    "caption": "Year Costs"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "digits": 2,
+                    "suffix": "€",
+                    "name": "DrinkingWaterCost",
+                    "caption": "Drinking Water Cost"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "digits": 2,
+                    "suffix": "€",
+                    "name": "SewageCost",
+                    "caption": "Sewage Cost"
+                }
+            ]
+        }
+        
+    ],
+    "actions": [
+        {
+            "type": "Label",
+            "caption": "Dieses Modul ist für die nicht kommerzielle Nutzung kostenlos, Schenkungen als Unterstützung für den Autor werden hier akzeptiert:    "
+        }
+        
+    ],
+    "status": [
+        {
+            "code": 102,
+            "icon": "active",
+            "caption": "Instance is active"
+        },
+        {
+            "code": 200,
+            "icon": "error",
+            "caption": "Instance Error"
+        },
+        {
+            "code": 104,
+            "icon": "inactive",
+            "caption": "Instance is inactive"
+        }
+    ]
+}
