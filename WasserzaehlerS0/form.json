@@ -73,7 +73,7 @@
                 {
                     "type": "CheckBox",
                     "name": "CurrentWeekCosts",
-                    "caption": "Week Costs"
+                    "caption": "Current Week Costs"
                 },
                 {
                     "type": "CheckBox",
