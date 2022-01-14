@@ -17,8 +17,8 @@
         },
         {
             "type": "CheckBox",
-            "name": "Daily",
-            "caption": "Daily"
+            "name": "Today",
+            "caption": "Today"
         },
         {
             "type": "CheckBox",
