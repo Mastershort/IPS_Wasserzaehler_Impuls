@@ -62,20 +62,18 @@
             "items": [
                 {
                     
-                    "type": "NumberSpinner",
-                    "digits": 2,
-                    "suffix": "€",
-                    "name": "DrinkingWaterCost",
-                    "caption": "Drinking Water Cost"
-                },
-                {
-                    "type": "NumberSpinner",
-                    "digits": 2,
-                    "suffix": "€",
-                    "name": "SewageCost",
-                    "caption": "Sewage Cost"
-                },
-                   
+                    {
+                        "type": "CheckBox",
+                        "name": "Impulse_kWhBool",
+                        "caption": "Impulse/kWh Calculation"
+                    },
+                    {
+                        "type": "NumberSpinner",
+                        "name": "Impulse_kWh",
+                        "caption": "Impulse/kWh"
+                    },
+                    
+                }
             ]
         }
         
