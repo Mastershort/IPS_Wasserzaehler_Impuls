@@ -180,7 +180,8 @@ declare(strict_types=1);
           public function calculateTotal(){
                 $archiveID = IPS_GetInstanceListByModuleID('{43192F0B-135B-4CE7-A0A7-1475603F3060}')[0];
                 $consumptionVariableID = $this->ReadPropertyInteger('pulseVariableID');
-                $totalcount = 10 + $this->ReadPropertyFloat('CurrentTotalCounter');
+                $totalCount = 0;
+                $totalCount = 10 + $this->ReadPropertyFloat('CurrentTotalCounter');
                 return['totalCounter'=>round($totalCount,2)];
           }
 		public function ReceiveData($JSONString)
