@@ -69,7 +69,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CalculatedMonthlyCosts', $this->Translate('Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MonthlyCosts') == true);
 
-            $this->MaintainVariable('CalculatedPreviousMontlyCosts', $this->Translate('Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('PreviousMontlyCosts') == true);
+            $this->MaintainVariable('CalculatedPreviousMonthlyCosts', $this->Translate('Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('PreviousMonthlyCosts') == true);
 
             $this->MaintainVariable('CalculatedYearCosts', $this->Translate('Year Costs'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearCosts') == true);
 
