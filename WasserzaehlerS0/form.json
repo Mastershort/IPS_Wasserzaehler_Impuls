@@ -95,7 +95,7 @@
                 {
                     "type": "CheckBox",
                     "name": "PreviousMonthlyCosts",
-                    "caption": "PreviousMontly Costs"
+                    "caption": "Previous Montly Costs"
                 },
                 {
                     "type": "CheckBox",
