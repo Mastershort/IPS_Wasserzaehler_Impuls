@@ -19,7 +19,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('WeeklyPrice', false);
             $this->RegisterPropertyBoolean('MontlyPrice', false);
             $this->RegisterPropertyBoolean('YearPrice', false);
-            $this->RegisterPropertyFloat('CalculatedTodayPrice',0.00);
+            
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedMonthlyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedYearPrice',0.00);
@@ -88,7 +88,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('Today')) {
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
-                //$this->SetValue('CalculatedTodayPrice', $result['price']);
+                $this->SetValue('CalculatedTodayPrice', $result['price']);
                
                
             }
