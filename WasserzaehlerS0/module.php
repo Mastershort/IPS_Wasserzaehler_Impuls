@@ -128,8 +128,9 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('CurrentMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
                 $this->SetValue('CurrentMonthConsumption', $result['consumption']);
+            if ($this->ReadPropertyBoolean('PreviousMonthlyCosts')) {
                 $this->SetValue('CalculatedMontlyCosts', $result['costs']);
-                
+                }
             }
 
             
