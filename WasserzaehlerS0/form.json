@@ -43,8 +43,8 @@
         },
         {
             "type": "CheckBox",
-            "name": "LastMonth",
-            "caption": "Last Month"
+            "name": "PriviousMonth",
+            "caption": "Privious Month"
         },
         {
             "type": "NumberSpinner",

@@ -15,7 +15,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('CurrentWeek', false);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
-            $this->RegisterPropertyBoolean('LastMonth', false);
+            $this->RegisterPropertyBoolean('PriviousMonth', false);
             $this->RegisterPropertyBoolean('TodayPrice', false);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
             $this->RegisterPropertyBoolean('WeekCosts', false);
@@ -53,9 +53,9 @@ declare(strict_types=1);
 
             $this->MaintainVariable('PreviousWeekConsumption', $this->Translate('Previous Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('PreviousWeek') == true);
 
-            $this->MaintainVariable('CurrentMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 10, $this->ReadPropertyBoolean('CurrentMonth') == true);
+            $this->MaintainVariable('CurrentMonthConsumption', $this->Translate('Current Month Consumption'), 2, '~Water', 10, $this->ReadPropertyBoolean('CurrentMonth') == true);
 
-            $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
+            $this->MaintainVariable('PreviousMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('PriviousMonth') == true);
 
             $this->MaintainVariable('CalculatedTodayPrice', $this->Translate('Today Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayPrice') == true);
 
@@ -125,9 +125,9 @@ declare(strict_types=1);
             }
 
             
-            if ($this->ReadPropertyBoolean('LastMonth')) {
+            if ($this->ReadPropertyBoolean('PriviousMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month - 1 month'), strtotime('last day of this month 23:59:59 -1 month'));
-                $this->SetValue('LastMonthConsumption', $result['consumption']);
+                $this->SetValue('PriviousMonthConsumption', $result['consumption']);
                 
             }
         }
