@@ -14,11 +14,12 @@
             "Previous Week Consumption": "Verbrauch Vorwoche",
             "Previous Month Consumption": "Verbrauch aktueller Monat",
             "Last Month Consumption": "Verbrauch letzter Monat",
+            "Week Costs": "Kosten Woche",
             "Previous Day Costs": "Kosten Vortag",
             "Previous Week Costs": "Kosten Vorwoche",
             "Current Month Costs": "Kosten aktueller Monat",
             "Today Price": "Kosten Heute",
-            "Weekly Price": "Kosten Woche",
+           
             "Montly Price": "Kosten Monat",
             "Year Price": "Kosten Jahr",
             "Start Date": "Startdatum",
