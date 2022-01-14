@@ -167,7 +167,7 @@ declare(strict_types=1);
 
                     foreach ($values as $key => $value) {
                        
-                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_m3');
                         $consumption += $tmpValueAVG;
                         
                     }
@@ -185,7 +185,7 @@ declare(strict_types=1);
                 $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 4, 0, 0, 0);
                 foreach ($values as $key => $value) {
                        
-                        $totalCountValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                        $totalCountValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_m3');
                         $totalCount += $totalCountValueAVG;
                         
                     }
