@@ -55,7 +55,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CurrentMonthConsumption', $this->Translate('Current Month Consumption'), 2, '~Water', 10, $this->ReadPropertyBoolean('CurrentMonth') == true);
 
-            $this->MaintainVariable('PreviousMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('PriviousMonth') == true);
+            $this->MaintainVariable('PreviousMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('PreviousMonth') == true);
 
             $this->MaintainVariable('CalculatedTodayPrice', $this->Translate('Today Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayPrice') == true);
 
