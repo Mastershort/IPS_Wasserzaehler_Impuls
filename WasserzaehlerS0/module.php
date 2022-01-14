@@ -110,7 +110,7 @@ declare(strict_types=1);
                
             }
             if ($this->ReadPropertyBoolean('CurrentWeek')) {
-                $result = $this->calculate(strtotime('last Monday'), strtotime(' next Sunday 23:59:59'));
+                $result = $this->calculate(strtotime('Monday'), strtotime('Sunday 23:59:59'));
                 $this->SetValue('CurrentWeekConsumption', $result['consumption']);
              if ($this->ReadPropertyBoolean('CurrentWeekCosts')) {
                 $this->SetValue('CalculatedWeekCosts', $result['costs']);
