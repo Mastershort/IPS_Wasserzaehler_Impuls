@@ -134,13 +134,7 @@ declare(strict_types=1);
                 $this->SetValue('CalculatedMonthlyCosts', $result['costs']);
                 }   
             }
-            if ($this->ReadPropertyBoolean('CurrentYear')) {
-                $result = $this->calculate(strtotime('midnight first day of this year'), time());
-                $this->SetValue('CurrentYearConsumption', $result['consumption']);
-             if ($this->ReadPropertyBoolean('YearCosts')) {
-                $this->SetValue('CalculatedYearCosts', $result['costs']);
-                }   
-            }
+            
         }
             public function calculate($startDate, $endDate)
             {
