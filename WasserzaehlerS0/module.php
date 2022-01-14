@@ -154,12 +154,12 @@ declare(strict_types=1);
                 
                 $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
 
-            $tmpValueAVG = $values['Avg'] / $this->ReadPropertyInteger('Impulse_l');
-             $consumption += $tmpValueAVG;
+            
+
                     foreach ($values as $key => $value) {
                        
-                        
-                       
+                        $tmpValueAVG = $value['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+                        $consumption += $tmpValueAVG;
                         
                     }
                     $calculatedCosts = ($this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost') )/ 1000;
