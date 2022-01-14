@@ -59,7 +59,7 @@
         {
             "type": "ExpansionPanel",
             "caption": "Price Calculation",
-            "items": 
+            "items": [
                 {
                     
                     {
@@ -78,7 +78,7 @@
                     },
                     
                 }
-            
+            ]
         }
         
     ],
