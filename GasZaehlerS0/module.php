@@ -31,7 +31,7 @@ declare(strict_types=1);
             $this->RegisterPropertyFloat('CalculatedYearPrice',0.00);
             $this->RegisterPropertyFloat('DrinkingWaterCost',0.00);
             $this->RegisterPropertyFloat('SewageCost',0.00);
-            $this->RegisterPropertyInteger('Impulse_m3',4);
+            $this->RegisterPropertyInteger('Impulse_m3',100000);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
 			$this->RegisterTimer('GZ_UpdateCalculation', 0, 'GZ_updateCalculation($_IPS[\'TARGET\']);');
 
