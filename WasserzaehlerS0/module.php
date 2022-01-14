@@ -48,7 +48,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('PreviousDayConsumption', $this->Translate('Previous Day Consumption'), 2, '~Water', 6, $this->ReadPropertyBoolean('PreviousDay') == true);
 
-            $this->MaintainVariable('CurrentWeekConsumption', $this->Translate('CurrentMonth Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('CurrentWeek') == true);
+            $this->MaintainVariable('CurrentWeekConsumption', $this->Translate('Current Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('CurrentWeek') == true);
 
             $this->MaintainVariable('PreviousWeekConsumption', $this->Translate('Previous Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('PreviousWeek') == true);
 
@@ -102,7 +102,7 @@ declare(strict_types=1);
             }
             if ($this->ReadPropertyBoolean('CurrentWeek')) {
                 $result = $this->calculate(strtotime('Monday this Week'), strtotime('Sunday 23:59:59'));
-                $this->SetValue('PreviousWeekConsumption', $result['consumption']);
+                $this->SetValue('CurrentWeekConsumption', $result['consumption']);
                 
             }
 
