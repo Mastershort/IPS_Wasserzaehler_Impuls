@@ -67,6 +67,11 @@
                 },
                 {
                     "type": "CheckBox",
+                    "name": "PreviousDayCosts",
+                    "caption": "Previos Day Costs"
+                },
+                {
+                    "type": "CheckBox",
                     "name": "WeeklyPrice",
                     "caption": "Weekly Price"
                 },
