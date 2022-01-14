@@ -18,7 +18,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('LastMonth', false);
             $this->RegisterPropertyBoolean('TodayPrice', false);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
-            $this->RegisterPropertyBoolean('WeeklyPrice', false);
+            $this->RegisterPropertyBoolean('WeekCosts', false);
             $this->RegisterPropertyBoolean('MontlyPrice', false);
             $this->RegisterPropertyBoolean('YearPrice', false);
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
@@ -61,7 +61,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CalculatedPreviousTodayCosts', $this->Translate('Previous Day Costs'), 2, '~Euro', 14, $this->ReadPropertyBoolean('PreviousDayCosts') == true);
 
-            $this->MaintainVariable('CalculatedWeeklyPrice', $this->Translate('Weekly Price'), 2, '~Euro', 16, $this->ReadPropertyBoolean('WeeklyPrice') == true);
+            $this->MaintainVariable('CalculatedWeekCosts', $this->Translate('Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('WeekCosts') == true);
 
             $this->MaintainVariable('CalculatedMontlyPrice', $this->Translate('Montly Price'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MontlyPrice') == true);
 
@@ -107,6 +107,7 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('CurrentWeek')) {
                 $result = $this->calculate(strtotime('last Monday'), strtotime(' next Sunday 23:59:59'));
                 $this->SetValue('CurrentWeekConsumption', $result['consumption']);
+                $this->SetValue('CalculatedWeekCosts', $result['price']);
                 
             }
 

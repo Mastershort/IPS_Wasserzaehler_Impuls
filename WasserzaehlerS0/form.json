@@ -72,8 +72,8 @@
                 },
                 {
                     "type": "CheckBox",
-                    "name": "WeeklyPrice",
-                    "caption": "Weekly Price"
+                    "name": "WeekCosts",
+                    "caption": "Week Costs"
                 },
                 {
                     "type": "CheckBox",
