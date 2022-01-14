@@ -11,7 +11,7 @@ declare(strict_types=1);
 			$this->RegisterPropertyInteger('pulseVariableID', 0);
             $this->RegisterPropertyBoolean('Active', false);
             $this->RegisterPropertyBoolean('Today', false);
-            $this->RegisterPropertyBoolean('PreviousDay', false);
+            $this->RegisterPropertyBoolean('LastDay', false);
             $this->RegisterPropertyBoolean('CurrentWeek', false);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);

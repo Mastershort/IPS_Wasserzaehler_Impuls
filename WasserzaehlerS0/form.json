@@ -67,8 +67,8 @@
                 },
                 {
                     "type": "CheckBox",
-                    "name": "PreviosDayCosts",
-                    "caption": "Previos Day Costs"
+                    "name": "PreviousDayCosts",
+                    "caption": "Previous Day Costs"
                 },
                 {
                     "type": "CheckBox",
