@@ -97,7 +97,7 @@ declare(strict_types=1);
                 $result = $this->calculate(strtotime('today 00:00'), time());
                 $this->SetValue('TodayConsumption', $result['consumption']);
             if ($this->ReadPropertyBoolean('TodayCosts')) {
-                $this->SetValue('CalculatedTodayCosts', $result['price']);
+                $this->SetValue('CalculatedTodayCosts', $result['costs']);
               } 
                
             }
@@ -105,7 +105,7 @@ declare(strict_types=1);
                 $result = $this->calculate(strtotime('yesterday 00:00'), strtotime('yesterday 23:59'));
                 $this->SetValue('PreviousDayConsumption', $result['consumption']);
              if ($this->ReadPropertyBoolean('PreviousDayCosts')) {
-                $this->SetValue('CalculatedPreviousTodayCosts', $result['price']);
+                $this->SetValue('CalculatedPreviousTodayCosts', $result['costs']);
               } 
                
             }
@@ -113,7 +113,7 @@ declare(strict_types=1);
                 $result = $this->calculate(strtotime('last Monday'), strtotime(' next Sunday 23:59:59'));
                 $this->SetValue('CurrentWeekConsumption', $result['consumption']);
              if ($this->ReadPropertyBoolean('CurrentWeekCosts')) {
-                $this->SetValue('CalculatedWeekCosts', $result['price']);
+                $this->SetValue('CalculatedWeekCosts', $result['costs']);
               } 
             }
 
@@ -121,7 +121,7 @@ declare(strict_types=1);
                 $result = $this->calculate(strtotime('last Monday'), strtotime('next Sunday 23:59:59'));
                
                 if ($this->ReadPropertyBoolean('PreviousWeekCosts')) {
-                    $this->SetValue('CalculatedPreviousWeekCosts', $result['consumption']);
+                    $this->SetValue('CalculatedPreviousWeekCosts', $result['costs']);
                     }
             }
 
@@ -158,10 +158,10 @@ declare(strict_types=1);
                         $consumption += $tmpValueAVG;
                         
                     }
-                    $calculatedPrice = ($this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost') )/ 1000;
-                    $price =$consumption * $calculatedPrice;
+                    $calculatedCosts = ($this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost') )/ 1000;
+                    $costs =$consumption * $calculatedCosts;
           
-            return ['consumption' => round($consumption, 2),'price' => round($price, 2)];
+            return ['consumption' => round($consumption, 2),'costs' => round($costs, 2)];
           }
 		public function ReceiveData($JSONString)
 		{
