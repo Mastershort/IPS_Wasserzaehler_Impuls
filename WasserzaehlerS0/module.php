@@ -24,6 +24,8 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('MonthlyCosts', false);
             $this->RegisterPropertyBoolean('PreviousMonthlyCosts', false);
             $this->RegisterPropertyBoolean('YearCosts', false);
+            $this->RegisterPropertyBoolean('ActiveTotalCounter', false);
+            $this->RegisterPropertyFloat('CurrentTotalCounter',0.00);
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedMonthlyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedYearPrice',0.00);
@@ -62,6 +64,7 @@ declare(strict_types=1);
             $this->MaintainVariable('CalculatedMonthlyCosts', $this->Translate('Current Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MonthlyCosts') == true);
             $this->MaintainVariable('CalculatedPreviousMonthlyCosts', $this->Translate('Previous Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('PreviousMonthlyCosts') == true);
             $this->MaintainVariable('CalculatedYearCosts', $this->Translate('Current Year Costs'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearCosts') == true);
+            $this->MaintainVariable('CalculatedTotalCounter', $this->Translate('Calculated Total Counter'), 2, '~Euro', 20, $this->ReadPropertyBoolean('ActiveTotalCounter') == true);
 
             
 			
