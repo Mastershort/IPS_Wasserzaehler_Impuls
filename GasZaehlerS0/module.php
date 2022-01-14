@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-	class WasserzaehlerS0 extends IPSModule
+	class GasaehlerS0 extends IPSModule
 	{
 		public function Create()
 		{
