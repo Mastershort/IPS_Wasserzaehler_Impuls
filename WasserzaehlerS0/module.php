@@ -154,7 +154,7 @@ declare(strict_types=1);
                 
                 $values = AC_GetAggregatedValues($archiveID, $consumptionVariableID, 0, $startDate, $endDate, 0);
 
-            $tmpValueAVG = $values[0]['Avg'] / $this->ReadPropertyInteger('Impulse_l');
+            $tmpValueAVG = $values['Avg'] / $this->ReadPropertyInteger('Impulse_l');
              $consumption += $tmpValueAVG;
                     foreach ($values as $key => $value) {
                        
