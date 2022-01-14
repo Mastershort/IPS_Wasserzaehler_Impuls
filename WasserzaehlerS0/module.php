@@ -45,7 +45,7 @@ declare(strict_types=1);
 			//Never delete this line!
 			parent::ApplyChanges();
 			
-            $this->MaintainVariable('TodayConsumption', $this->Translate('Today Consumption'), 2, '~Water', 4, $this->ReadPropertyBoolean('Today') == true);
+            $this->MaintainVariable('TodayConsumption', $this->Translate('Todaysdf  Consumption'), 2, '~Water', 4, $this->ReadPropertyBoolean('Today') == true);
 
             $this->MaintainVariable('PreviousDayConsumption', $this->Translate('Previous Day Consumption'), 2, '~Water', 6, $this->ReadPropertyBoolean('PreviousDay') == true);
 
