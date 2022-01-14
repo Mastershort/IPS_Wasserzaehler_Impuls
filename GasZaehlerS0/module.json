@@ -1,0 +1,16 @@
+{
+    "id": "{ADB2DF08-F4FA-59C8-2189-0725C4FEC973}",
+    "name": "WasserzaehlerS0",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{018EF6B5-AB94-40C6-AA53-46943E824ACF}"
+    ],
+    "prefix": "WZ",
+    "url": ""
+}
