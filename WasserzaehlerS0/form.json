@@ -16,6 +16,11 @@
             "requiredLogging": 4
         },
         {
+            "type": "NumberSpinner",
+            "name": "Impulse_l",
+            "caption": "Impulse/Liter"
+        },
+        {
             "type": "CheckBox",
             "name": "Today",
             "caption": "Today"
@@ -52,15 +57,22 @@
             "caption": "Current Year"
         },
         {
+            "type": "CheckBox",
+            "name": "ActiveTotalCounter",
+            "caption": "Active Total Counter"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "CurrentTotalCounter",
+            "caption": "Current Total Counter"
+        },
+        {
             "type": "NumberSpinner",
             "name": "UpdateInterval",
             "caption": "Update Interval"
         },
-        {
-            "type": "NumberSpinner",
-            "name": "Impulse_l",
-            "caption": "Impulse/Liter"
-        },
+
+        
         {
             "type": "ExpansionPanel",
             "caption": "Price Calculation",
