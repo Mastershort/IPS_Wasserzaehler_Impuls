@@ -15,7 +15,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
-            $this->RegisterPropertyBoolean('DailyPrice', false);
+            $this->RegisterPropertyBoolean('TodayPrice', false);
             $this->RegisterPropertyBoolean('WeeklyPrice', false);
             $this->RegisterPropertyBoolean('MontlyPrice', false);
             $this->RegisterPropertyBoolean('YearPrice', false);
@@ -44,7 +44,7 @@ declare(strict_types=1);
 			//Never delete this line!
 			parent::ApplyChanges();
 			
-            $this->MaintainVariable('TodayConsumption', $this->Translate('Daily Consumption'), 2, '~Water', 4, $this->ReadPropertyBoolean('Today') == true);
+            $this->MaintainVariable('TodayConsumption', $this->Translate('Today Consumption'), 2, '~Water', 4, $this->ReadPropertyBoolean('Today') == true);
 
             $this->MaintainVariable('PreviousDayConsumption', $this->Translate('Previous Day Consumption'), 2, '~Water', 6, $this->ReadPropertyBoolean('PreviousDay') == true);
 
@@ -54,13 +54,13 @@ declare(strict_types=1);
 
             $this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 
-            $this->MaintainVariable('CalculatedDailyPrice', $this->Translate('Daily Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('DailyPrice') == true);
+            $this->MaintainVariable('CalculatedTodayPrice', $this->Translate('Today Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayPrice') == true);
 
-            $this->MaintainVariable('CalculatedWeeklyPrice', $this->Translate('Weekly Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('WeeklyPrice') == true);
+            $this->MaintainVariable('CalculatedWeeklyPrice', $this->Translate('Weekly Price'), 2, '~Euro', 16, $this->ReadPropertyBoolean('WeeklyPrice') == true);
 
-            $this->MaintainVariable('CalculatedMontlyPrice', $this->Translate('Montly Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('MontlyPrice') == true);
+            $this->MaintainVariable('CalculatedMontlyPrice', $this->Translate('Montly Price'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MontlyPrice') == true);
 
-            $this->MaintainVariable('CalculatedYearPrice', $this->Translate('Year Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('YearPrice') == true);
+            $this->MaintainVariable('CalculatedYearPrice', $this->Translate('Year Price'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearPrice') == true);
 
             //$this->MaintainVariable('LastMonthConsumption', $this->Translate('Last Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('LastMonth') == true);
 			
