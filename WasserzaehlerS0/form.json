@@ -56,23 +56,23 @@
             "items": [
                 {
                     "type": "CheckBox",
-                    "name": "Today Price",
-                    "caption": "TodayPrice"
+                    "name": "TodayPrice",
+                    "caption": "Today Price"
                 },
                 {
                     "type": "CheckBox",
-                    "name": "Weekly Price",
-                    "caption": "WeeklyPrice"
+                    "name": "WeeklyPrice",
+                    "caption": "Weekly Price"
                 },
                 {
                     "type": "CheckBox",
-                    "name": "Montly Price",
-                    "caption": "MontlyPrice"
+                    "name": "MontlyPrice",
+                    "caption": "Montly Price"
                 },
                 {
                     "type": "CheckBox",
-                    "name": "Year Price",
-                    "caption": "YearPrice"
+                    "name": "YearPrice",
+                    "caption": "Year Price"
                 },
                 {
                     "type": "NumberSpinner",
