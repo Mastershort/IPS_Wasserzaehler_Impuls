@@ -20,7 +20,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
             $this->RegisterPropertyBoolean('CurrentWeekCosts', false);
             $this->RegisterPropertyBoolean('PreviousWeekCosts', false);
-            $this->RegisterPropertyBoolean('MontlyCosts', false);
+            $this->RegisterPropertyBoolean('MonthlyCosts', false);
             $this->RegisterPropertyBoolean('PreviousMonthlyCosts', false);
             $this->RegisterPropertyBoolean('YearCosts', false);
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
