@@ -16,7 +16,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('PreviousMonth', false);
-            $this->RegisterPropertyBoolean('TodayPrice', false);
+            $this->RegisterPropertyBoolean('TodayCosts', false);
             $this->RegisterPropertyBoolean('PreviousDayCosts', false);
             $this->RegisterPropertyBoolean('WeekCosts', false);
             $this->RegisterPropertyBoolean('MontlyPrice', false);
@@ -57,7 +57,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('PreviousMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('PreviousMonth') == true);
 
-            $this->MaintainVariable('CalculatedTodayPrice', $this->Translate('Today Price'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayPrice') == true);
+            $this->MaintainVariable('CalculatedTodayCosts', $this->Translate('Today Costs'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayCosts') == true);
 
             $this->MaintainVariable('CalculatedPreviousTodayCosts', $this->Translate('Previous Day Costs'), 2, '~Euro', 14, $this->ReadPropertyBoolean('PreviousDayCosts') == true);
 
@@ -125,7 +125,7 @@ declare(strict_types=1);
             }
 
             
-            if ($this->ReadPropertyBoolean('PriviousMonth')) {
+            if ($this->ReadPropertyBoolean('PreviousMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month - 1 month'), strtotime('last day of this month 23:59:59 -1 month'));
                 $this->SetValue('PreviousMonthConsumption', $result['consumption']);
                 

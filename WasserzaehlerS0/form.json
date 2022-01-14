@@ -62,8 +62,8 @@
             "items": [
                 {
                     "type": "CheckBox",
-                    "name": "TodayPrice",
-                    "caption": "Today Price"
+                    "name": "TodayCosts",
+                    "caption": "Today Costs"
                 },
                 {
                     "type": "CheckBox",
