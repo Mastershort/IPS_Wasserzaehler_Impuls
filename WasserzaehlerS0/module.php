@@ -12,6 +12,7 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('Active', false);
             $this->RegisterPropertyBoolean('Today', false);
             $this->RegisterPropertyBoolean('PreviousDay', false);
+            $this->RegisterPropertyBoolean('CurrentWeek', false);
             $this->RegisterPropertyBoolean('PreviousWeek', false);
             $this->RegisterPropertyBoolean('CurrentMonth', false);
             $this->RegisterPropertyBoolean('LastMonth', false);
@@ -19,7 +20,6 @@ declare(strict_types=1);
             $this->RegisterPropertyBoolean('WeeklyPrice', false);
             $this->RegisterPropertyBoolean('MontlyPrice', false);
             $this->RegisterPropertyBoolean('YearPrice', false);
-            
             $this->RegisterPropertyFloat('CalculatedWeeklyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedMonthlyPrice',0.00);
             $this->RegisterPropertyFloat('CalculatedYearPrice',0.00);
@@ -47,6 +47,8 @@ declare(strict_types=1);
             $this->MaintainVariable('TodayConsumption', $this->Translate('Today Consumption'), 2, '~Water', 4, $this->ReadPropertyBoolean('Today') == true);
 
             $this->MaintainVariable('PreviousDayConsumption', $this->Translate('Previous Day Consumption'), 2, '~Water', 6, $this->ReadPropertyBoolean('PreviousDay') == true);
+
+            $this->MaintainVariable('CurrentWeekConsumption', $this->Translate('CurrentMonth Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('CurrentWeek') == true);
 
             $this->MaintainVariable('PreviousWeekConsumption', $this->Translate('Previous Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('PreviousWeek') == true);
 
@@ -98,6 +100,11 @@ declare(strict_types=1);
                
                
             }
+            if ($this->ReadPropertyBoolean('CurrentWeek')) {
+                $result = $this->calculate(strtotime('Monday this Week'), strtotime('Sunday 23:59:59'));
+                $this->SetValue('PreviousWeekConsumption', $result['consumption']);
+                
+            }
 
             if ($this->ReadPropertyBoolean('PreviousWeek')) {
                 $result = $this->calculate(strtotime('last Monday'), strtotime('next Sunday 23:59:59'));
@@ -112,11 +119,7 @@ declare(strict_types=1);
                 
             }
 
-            if ($this->ReadPropertyBoolean('CurrentMonth')) {
-                $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
-                $this->SetValue('CurrentMonthConsumption', $result['consumption']);
-                
-            }
+            
             if ($this->ReadPropertyBoolean('LastMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month - 1 month'), strtotime('last day of this month 23:59:59 -1 month'));
                 $this->SetValue('LastMonthConsumption', $result['consumption']);
