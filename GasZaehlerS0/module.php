@@ -33,7 +33,7 @@ declare(strict_types=1);
             $this->RegisterPropertyFloat('SewageCost',0.00);
             $this->RegisterPropertyInteger('Impulse_m3',4);
 			$this->RegisterPropertyInteger('UpdateInterval', 600);
-			$this->RegisterTimer('WZ_UpdateCalculation', 0, 'WZ_updateCalculation($_IPS[\'TARGET\']);');
+			$this->RegisterTimer('GZ_UpdateCalculation', 0, 'GZ_updateCalculation($_IPS[\'TARGET\']);');
 
             
 		
@@ -50,13 +50,13 @@ declare(strict_types=1);
 			//Never delete this line!
 			parent::ApplyChanges();
 			
-            $this->MaintainVariable('TodayConsumption', $this->Translate('Today Consumption'), 2, '~Water', 4, $this->ReadPropertyBoolean('Today') == true);
-            $this->MaintainVariable('PreviousDayConsumption', $this->Translate('Previous Day Consumption'), 2, '~Water', 6, $this->ReadPropertyBoolean('PreviousDay') == true);
-            $this->MaintainVariable('CurrentWeekConsumption', $this->Translate('Current Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('CurrentWeek') == true);
-            $this->MaintainVariable('PreviousWeekConsumption', $this->Translate('Previous Week Consumption'), 2, '~Water', 8, $this->ReadPropertyBoolean('PreviousWeek') == true);
-            $this->MaintainVariable('CurrentMonthConsumption', $this->Translate('Current Month Consumption'), 2, '~Water', 10, $this->ReadPropertyBoolean('CurrentMonth') == true);
-            $this->MaintainVariable('PreviousMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('PreviousMonth') == true);
-            $this->MaintainVariable('CurrentYearConsumption', $this->Translate('Current Year Consumption'), 2, '~Water', 12, $this->ReadPropertyBoolean('CurrentYear') == true);
+            $this->MaintainVariable('TodayConsumption', $this->Translate('Today Consumption'), 2, '~Gas', 4, $this->ReadPropertyBoolean('Today') == true);
+            $this->MaintainVariable('PreviousDayConsumption', $this->Translate('Previous Day Consumption'), 2, '~Gas', 6, $this->ReadPropertyBoolean('PreviousDay') == true);
+            $this->MaintainVariable('CurrentWeekConsumption', $this->Translate('Current Week Consumption'), 2, '~Gas', 8, $this->ReadPropertyBoolean('CurrentWeek') == true);
+            $this->MaintainVariable('PreviousWeekConsumption', $this->Translate('Previous Week Consumption'), 2, '~Gas', 8, $this->ReadPropertyBoolean('PreviousWeek') == true);
+            $this->MaintainVariable('CurrentMonthConsumption', $this->Translate('Current Month Consumption'), 2, '~Gas', 10, $this->ReadPropertyBoolean('CurrentMonth') == true);
+            $this->MaintainVariable('PreviousMonthConsumption', $this->Translate('Previous Month Consumption'), 2, '~Gas', 12, $this->ReadPropertyBoolean('PreviousMonth') == true);
+            $this->MaintainVariable('CurrentYearConsumption', $this->Translate('Current Year Consumption'), 2, '~Gas', 12, $this->ReadPropertyBoolean('CurrentYear') == true);
             $this->MaintainVariable('CalculatedTodayCosts', $this->Translate('Today Costs'), 2, '~Euro', 14, $this->ReadPropertyBoolean('TodayCosts') == true);
             $this->MaintainVariable('CalculatedPreviousTodayCosts', $this->Translate('Previous Day Costs'), 2, '~Euro', 14, $this->ReadPropertyBoolean('PreviousDayCosts') == true);
             $this->MaintainVariable('CalculatedWeekCosts', $this->Translate('Current Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('CurrentWeekCosts') == true);
@@ -64,7 +64,7 @@ declare(strict_types=1);
             $this->MaintainVariable('CalculatedMonthlyCosts', $this->Translate('Current Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MonthlyCosts') == true);
             $this->MaintainVariable('CalculatedPreviousMonthlyCosts', $this->Translate('Previous Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('PreviousMonthlyCosts') == true);
             $this->MaintainVariable('CalculatedYearCosts', $this->Translate('Current Year Costs'), 2, '~Euro', 20, $this->ReadPropertyBoolean('YearCosts') == true);
-            $this->MaintainVariable('CalculatedTotalCounter', $this->Translate('Calculated Total Counter'), 2, '~Water', 20, $this->ReadPropertyBoolean('ActiveTotalCounter') == true);
+            $this->MaintainVariable('CalculatedTotalCounter', $this->Translate('Calculated Total Counter'), 2, '~Gas', 20, $this->ReadPropertyBoolean('ActiveTotalCounter') == true);
 
             
 			
