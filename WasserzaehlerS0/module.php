@@ -65,7 +65,7 @@ declare(strict_types=1);
 
             $this->MaintainVariable('CalculatedWeekCosts', $this->Translate('Current Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('CurrentWeekCosts') == true);
 
-            $this->MaintainVariable('CalculatedPreviousWeekCosts', $this->Translate('Previous Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('PreviousWeekCosts') == true);
+           $this->MaintainVariable('CalculatedPreviousWeekCosts', $this->Translate('Previous Week Costs'), 2, '~Euro', 16, $this->ReadPropertyBoolean('PreviousWeekCosts') == true);
 
             $this->MaintainVariable('CalculatedMonthlyCosts', $this->Translate('Montly Costs'), 2, '~Euro', 18, $this->ReadPropertyBoolean('MonthlyCosts') == true);
 
@@ -131,8 +131,8 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('CurrentMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month'), strtotime('last day of this month 23:59:59'));
                 $this->SetValue('CurrentMonthConsumption', $result['consumption']);
-            if ($this->ReadPropertyBoolean('PreviousMonthlyCosts')) {
-                $this->SetValue('CalculatedMontlyCosts', $result['costs']);
+            if ($this->ReadPropertyBoolean('CurrentMonthlyCosts')) {
+                $this->SetValue('CalculatedMonthlyCosts', $result['costs']);
                 }
             }
 
@@ -140,7 +140,9 @@ declare(strict_types=1);
             if ($this->ReadPropertyBoolean('PreviousMonth')) {
                 $result = $this->calculate(strtotime('midnight first day of this month - 1 month'), strtotime('last day of this month 23:59:59 -1 month'));
                 $this->SetValue('PreviousMonthConsumption', $result['consumption']);
-                
+             if ($this->ReadPropertyBoolean('PreviousMonthlyCosts')) {
+                $this->SetValue('CalculatedMonthlyCosts', $result['costs']);
+                }   
             }
         }
             public function calculate($startDate, $endDate)
@@ -163,7 +165,7 @@ declare(strict_types=1);
                         
                     }
                     $calculatedCosts = ($this->ReadPropertyFloat('DrinkingWaterCost') + $this->ReadPropertyFloat('SewageCost') )/ 1000;
-                    $costs =$consumption * $calculatedCosts;
+                    $costs = $consumption * $calculatedCosts;
           
             return ['consumption' => round($consumption, 2),'costs' => round($costs, 2)];
           }
