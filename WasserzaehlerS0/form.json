@@ -20,10 +20,16 @@
             "name": "Today",
             "caption": "Today"
         },
+           
         {
             "type": "CheckBox",
             "name": "PreviousDay",
             "caption": "Previous Day"
+        },
+        {
+            "type": "CheckBox",
+            "name": "CurrentWeek",
+            "caption": "Current Week"
         },
         {
             "type": "CheckBox",
